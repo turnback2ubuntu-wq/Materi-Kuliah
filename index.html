@@ -13,15 +13,14 @@
       --bg: #06090f;
       --surface: rgba(255, 255, 255, 0.035);
       --surface-hover: rgba(255, 255, 255, 0.06);
-      --surface-active: rgba(0, 240, 255, 0.08);
       --fg: #f1f7fc;
       --fg-muted: #94a3b8;
       --fg-faint: #64748b;
-      --hair: rgba(0, 240, 255, 0.16);
+      --hair: rgba(255, 255, 255, 0.12);
       --hair-subtle: rgba(255, 255, 255, 0.08);
       --primary: #00f0ff;
       --primary-glow: rgba(0, 240, 255, 0.45);
-      --accent-grad: linear-gradient(115deg, #00f0ff 0%, #38bdf8 50%, #6366f1 100%);
+      --accent-grad: linear-gradient(115deg, #00f0ff 0%, #a855f7 50%, #f59e0b 100%);
       --radius: 18px;
       --radius-sm: 10px;
       --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -42,14 +41,15 @@
       display: flex;
       flex-direction: column;
       background-image: 
-        radial-gradient(circle at 20% 15%, rgba(0, 240, 255, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 80% 85%, rgba(99, 102, 241, 0.08) 0%, transparent 40%);
+        radial-gradient(circle at 15% 10%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(245, 158, 11, 0.06) 0%, transparent 45%);
       background-attachment: fixed;
       line-height: 1.6;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1240px;
       margin: 0 auto;
       padding: 60px 24px;
       width: 100%;
@@ -68,7 +68,7 @@
       padding: 6px 14px;
       border-radius: 999px;
       background: rgba(0, 240, 255, 0.08);
-      border: 1px solid var(--hair);
+      border: 1px solid rgba(0, 240, 255, 0.25);
       color: var(--primary);
       font-size: 13px;
       font-weight: 600;
@@ -102,7 +102,7 @@
     .description {
       font-size: clamp(16px, 2vw, 19px);
       color: var(--fg-muted);
-      max-width: 720px;
+      max-width: 800px;
     }
 
     /* Course Section */
@@ -113,22 +113,23 @@
     .section-header {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 14px;
-      margin-bottom: 24px;
-      padding-bottom: 12px;
+      margin-bottom: 28px;
+      padding-bottom: 14px;
       border-bottom: 1px solid var(--hair-subtle);
     }
 
     .section-title {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 700;
       color: var(--fg);
     }
 
     .section-tag {
-      font-size: 12px;
+      font-size: 13px;
       font-family: var(--font-mono);
-      padding: 3px 10px;
+      padding: 4px 12px;
       border-radius: 6px;
       background: rgba(255, 255, 255, 0.06);
       color: var(--fg-muted);
@@ -137,7 +138,7 @@
     /* Cards Grid */
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 24px;
     }
 
@@ -145,7 +146,7 @@
       background: var(--surface);
       border: 1px solid var(--hair);
       border-radius: var(--radius);
-      padding: 28px;
+      padding: 26px;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
       overflow: hidden;
@@ -160,15 +161,15 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: var(--accent-grad);
-      opacity: 0.8;
+      background: var(--card-color, var(--primary));
+      opacity: 0.9;
     }
 
     .card:hover {
       transform: translateY(-4px);
       background: var(--surface-hover);
-      border-color: rgba(0, 240, 255, 0.4);
-      box-shadow: 0 20px 40px -15px var(--primary-glow);
+      border-color: var(--card-color, rgba(0, 240, 255, 0.4));
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
     }
 
     .card-meta {
@@ -181,44 +182,45 @@
     .card-number {
       font-family: var(--font-mono);
       font-size: 13px;
-      font-weight: 600;
-      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 0.05em;
     }
 
     .card-cpmk {
       font-size: 11px;
       font-family: var(--font-mono);
-      background: rgba(0, 240, 255, 0.1);
-      color: var(--primary);
       padding: 2px 8px;
       border-radius: 4px;
-      border: 1px solid rgba(0, 240, 255, 0.2);
+      border: 1px solid transparent;
+      font-weight: 600;
     }
 
     .card-title {
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 700;
       margin-bottom: 10px;
-      line-height: 1.3;
+      line-height: 1.35;
+      color: #ffffff;
     }
 
     .card-desc {
-      font-size: 14px;
+      font-size: 13.5px;
       color: var(--fg-muted);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       flex: 1;
+      line-height: 1.6;
     }
 
     .features-list {
       list-style: none;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 7px;
     }
 
     .features-list li {
-      font-size: 13px;
+      font-size: 12.5px;
       color: var(--fg-muted);
       display: flex;
       align-items: center;
@@ -228,7 +230,6 @@
     .features-list li svg {
       width: 14px;
       height: 14px;
-      color: var(--primary);
       flex-shrink: 0;
     }
 
@@ -237,6 +238,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+      margin-top: auto;
     }
 
     .btn {
@@ -244,9 +246,9 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 12px 20px;
+      padding: 11px 18px;
       border-radius: var(--radius-sm);
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 600;
       text-decoration: none;
       cursor: pointer;
@@ -254,15 +256,12 @@
     }
 
     .btn-primary {
-      background: var(--primary);
-      color: #011218;
       font-weight: 700;
-      box-shadow: 0 4px 20px rgba(0, 240, 255, 0.35);
     }
 
     .btn-primary:hover {
-      box-shadow: 0 6px 28px rgba(0, 240, 255, 0.6);
       transform: translateY(-1px);
+      filter: brightness(1.1);
     }
 
     .btn-secondary {
@@ -279,7 +278,7 @@
     /* Footer */
     footer {
       border-top: 1px solid var(--hair-subtle);
-      padding: 24px;
+      padding: 28px;
       text-align: center;
       font-size: 13px;
       color: var(--fg-faint);
@@ -296,29 +295,29 @@
     <header class="header">
       <div class="badge-pill">
         <span class="badge-dot"></span>
-        PORTAL MATERI PERKULIAHAN
+        PORTAL MATERI PERKULIAHAN LENGKAP
       </div>
       <h1 class="title">
         Pusat Materi <span class="accent-text">Statistik Teknik</span> & Informatika
       </h1>
       <p class="description">
-        Koleksi materi perkuliahan, slide presentasi interaktif berbasis web (Vite + React), dan modul praktikum laboratorium terstandar kurikulum OBE.
+        Koleksi lengkap 15 bab materi perkuliahan, slide presentasi interaktif berbasis web (Vite + React dengan Bolt Slides Engine), kode R otentik, dan dokumen naskah praktikum terstandar kurikulum OBE.
       </p>
     </header>
 
     <main>
       <section class="course-section">
         <div class="section-header">
-          <h2 class="section-title">Mata Kuliah: Statistik Teknik</h2>
-          <span class="section-tag">Semester Ganjil 2026</span>
+          <h2 class="section-title">Mata Kuliah: Statistik Teknik (TIF-302)</h2>
+          <span class="section-tag">Semester Ganjil 2026 · 15 Pertemuan Lengkap</span>
         </div>
 
         <div class="cards-grid">
           <!-- Pertemuan 1 Active Card -->
-          <div class="card">
+          <div class="card" style="--card-color: #00f0ff;">
             <div class="card-meta">
-              <span class="card-number">PERTEMUAN 01</span>
-              <span class="card-cpmk">CPMK-1</span>
+              <span class="card-number" style="color: #00f0ff;">PERTEMUAN 01</span>
+              <span class="card-cpmk" style="color: #00f0ff; border-color: #00f0ff44; background: #00f0ff18;">CPMK-1</span>
             </div>
             <h3 class="card-title">Pengantar Statistik Teknik & Lingkungan R</h3>
             <p class="card-desc">
@@ -326,20 +325,20 @@
             </p>
             <ul class="features-list">
               <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #00f0ff;"><polyline points="20 6 9 17 4 12"/></svg>
                 10 Slide Web Interaktif (Bolt Slides Engine)
               </li>
               <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #00f0ff;"><polyline points="20 6 9 17 4 12"/></svg>
                 Presenter Mode (P) & Anotasi Layar (A)
               </li>
               <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                Tema Dark Technical Neon Cyan
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #00f0ff;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Dark Technical Neon Cyan
               </li>
             </ul>
             <div class="btn-group">
-              <a href="./StatistikTeknik/Pertemuan-1/dist/" class="btn btn-primary">
+              <a href="./StatistikTeknik/Pertemuan-1/dist/" class="btn btn-primary" style="background: #00f0ff; color: #05070a; box-shadow: 0 4px 20px #00f0ff55;">
                 🚀 Buka Slide Presentasi
               </a>
               <a href="./StatistikTeknik/Pertemuan-1/Bab_01_Pengantar_Statistik_Teknik_dan_Lingkungan_R.docx" class="btn btn-secondary">
@@ -349,10 +348,10 @@
           </div>
 
           <!-- Pertemuan 2 Active Card -->
-          <div class="card">
+          <div class="card" style="--card-color: #00f0ff;">
             <div class="card-meta">
-              <span class="card-number">PERTEMUAN 02</span>
-              <span class="card-cpmk">CPMK-1 & CPMK-2</span>
+              <span class="card-number" style="color: #00f0ff;">PERTEMUAN 02</span>
+              <span class="card-cpmk" style="color: #00f0ff; border-color: #00f0ff44; background: #00f0ff18;">CPMK-1 & CPMK-2</span>
             </div>
             <h3 class="card-title">Struktur Data & Manipulasi Data di R</h3>
             <p class="card-desc">
@@ -360,20 +359,20 @@
             </p>
             <ul class="features-list">
               <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #00f0ff;"><polyline points="20 6 9 17 4 12"/></svg>
                 10 Slide Web Interaktif (Bolt Slides Engine)
               </li>
               <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #00f0ff;"><polyline points="20 6 9 17 4 12"/></svg>
                 Presenter Mode (P) & Anotasi Layar (A)
               </li>
               <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                Tema Dark Technical Neon Cyan
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #00f0ff;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Dark Technical Neon Cyan
               </li>
             </ul>
             <div class="btn-group">
-              <a href="./StatistikTeknik/Pertemuan-2/dist/" class="btn btn-primary">
+              <a href="./StatistikTeknik/Pertemuan-2/dist/" class="btn btn-primary" style="background: #00f0ff; color: #05070a; box-shadow: 0 4px 20px #00f0ff55;">
                 🚀 Buka Slide Presentasi
               </a>
               <a href="./StatistikTeknik/Pertemuan-2/Bab_02_Struktur_Data_dan_Manipulasi_Data_di_R.docx" class="btn btn-secondary">
@@ -382,19 +381,445 @@
             </div>
           </div>
 
-          <div class="card" style="opacity: 0.6; border-style: dashed;">
+          <!-- Pertemuan 3 Active Card -->
+          <div class="card" style="--card-color: #a855f7;">
             <div class="card-meta">
-              <span class="card-number" style="color: var(--fg-faint);">PERTEMUAN 03</span>
-              <span class="card-cpmk" style="background: rgba(255,255,255,0.05); color: var(--fg-faint); border-color: transparent;">CPMK-2</span>
+              <span class="card-number" style="color: #a855f7;">PERTEMUAN 03</span>
+              <span class="card-cpmk" style="color: #a855f7; border-color: #a855f744; background: #a855f718;">CPMK-2</span>
             </div>
-            <h3 class="card-title">Statistika Deskriptif & Eksplorasi Data</h3>
+            <h3 class="card-title">Statistika Deskriptif & Eksplorasi Data (EDA)</h3>
             <p class="card-desc">
-              Ukuran pemusatan, penyebaran, deteksi outlier, serta eksplorasi statistik univariat dan bivariat.
+              Ukuran pemusatan (mean/median/modus), dispersi robust (IQR vs SD), asimetri skewness, deteksi pencilan Tukey 1.5×IQR, dan analisis latensi API checkout.
             </p>
-            <div class="btn-group" style="margin-top: auto;">
-              <span class="btn btn-secondary" style="cursor: not-allowed; opacity: 0.7;">
-                Segera Hadir
-              </span>
+            <ul class="features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #a855f7;"><polyline points="20 6 9 17 4 12"/></svg>
+                10 Slide Web Interaktif (Bolt Slides Engine)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #a855f7;"><polyline points="20 6 9 17 4 12"/></svg>
+                Presenter Mode (P) & Anotasi Layar (A)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #a855f7;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Violet & Fuchsia Analytics
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./StatistikTeknik/Pertemuan-3/dist/" class="btn btn-primary" style="background: #a855f7; color: #05070a; box-shadow: 0 4px 20px #a855f755;">
+                🚀 Buka Slide Presentasi
+              </a>
+              <a href="./StatistikTeknik/Pertemuan-3/Bab_03_Statistika_Deskriptif_dan_Eksplorasi_Data.docx" class="btn btn-secondary">
+                📄 Unduh Modul Bab 3 (.docx)
+              </a>
+            </div>
+          </div>
+
+          <!-- Pertemuan 4 Active Card -->
+          <div class="card" style="--card-color: #10b981;">
+            <div class="card-meta">
+              <span class="card-number" style="color: #10b981;">PERTEMUAN 04</span>
+              <span class="card-cpmk" style="color: #10b981; border-color: #10b98144; background: #10b98118;">CPMK-2</span>
+            </div>
+            <h3 class="card-title">Visualisasi Data dengan R & ggplot2</h3>
+            <p class="card-desc">
+              Prinsip data-ink ratio Edward Tufte, 7 lapisan Grammar of Graphics, estetika berlapis, faceting small multiples, dan heatmap korelasi matriks telemetri server.
+            </p>
+            <ul class="features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #10b981;"><polyline points="20 6 9 17 4 12"/></svg>
+                10 Slide Web Interaktif (Bolt Slides Engine)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #10b981;"><polyline points="20 6 9 17 4 12"/></svg>
+                Presenter Mode (P) & Anotasi Layar (A)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #10b981;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Aurora Emerald & Cyan
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./StatistikTeknik/Pertemuan-4/dist/" class="btn btn-primary" style="background: #10b981; color: #05070a; box-shadow: 0 4px 20px #10b98155;">
+                🚀 Buka Slide Presentasi
+              </a>
+              <a href="./StatistikTeknik/Pertemuan-4/Bab_04_Visualisasi_Data_dengan_R.docx" class="btn btn-secondary">
+                📄 Unduh Modul Bab 4 (.docx)
+              </a>
+            </div>
+          </div>
+
+          <!-- Pertemuan 5 Active Card -->
+          <div class="card" style="--card-color: #6366f1;">
+            <div class="card-meta">
+              <span class="card-number" style="color: #6366f1;">PERTEMUAN 05</span>
+              <span class="card-cpmk" style="color: #6366f1; border-color: #6366f144; background: #6366f118;">CPMK-3</span>
+            </div>
+            <h3 class="card-title">Teori Probabilitas & Distribusi Diskrit</h3>
+            <p class="card-desc">
+              Aksioma probabilitas, Teorema Bayes dalam filter spam email, PMF/CDF, distribusi Binomial, Geometrik retry socket, dan pemodelan antrean paket Poisson.
+            </p>
+            <ul class="features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #6366f1;"><polyline points="20 6 9 17 4 12"/></svg>
+                10 Slide Web Interaktif (Bolt Slides Engine)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #6366f1;"><polyline points="20 6 9 17 4 12"/></svg>
+                Presenter Mode (P) & Anotasi Layar (A)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #6366f1;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Electric Indigo & Blue
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./StatistikTeknik/Pertemuan-5/dist/" class="btn btn-primary" style="background: #6366f1; color: #05070a; box-shadow: 0 4px 20px #6366f155;">
+                🚀 Buka Slide Presentasi
+              </a>
+              <a href="./StatistikTeknik/Pertemuan-5/Bab_05_Teori_Probabilitas_dan_Distribusi_Diskrit.docx" class="btn btn-secondary">
+                📄 Unduh Modul Bab 5 (.docx)
+              </a>
+            </div>
+          </div>
+
+          <!-- Pertemuan 6 Active Card -->
+          <div class="card" style="--card-color: #a3e635;">
+            <div class="card-meta">
+              <span class="card-number" style="color: #a3e635;">PERTEMUAN 06</span>
+              <span class="card-cpmk" style="color: #a3e635; border-color: #a3e63544; background: #a3e63518;">CPMK-3</span>
+            </div>
+            <h3 class="card-title">Distribusi Kontinu & Teorema Limit Pusat (CLT)</h3>
+            <p class="card-desc">
+              Fungsi densitas peluang (PDF), kurva Normal Gauss & standardisasi Z, Student-t, Chi-Square, waktu hidup eksponensial (memoryless), dan bukti empiris CLT di R.
+            </p>
+            <ul class="features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #a3e635;"><polyline points="20 6 9 17 4 12"/></svg>
+                10 Slide Web Interaktif (Bolt Slides Engine)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #a3e635;"><polyline points="20 6 9 17 4 12"/></svg>
+                Presenter Mode (P) & Anotasi Layar (A)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #a3e635;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Cyber Lime & Chartreuse
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./StatistikTeknik/Pertemuan-6/dist/" class="btn btn-primary" style="background: #a3e635; color: #05070a; box-shadow: 0 4px 20px #a3e63555;">
+                🚀 Buka Slide Presentasi
+              </a>
+              <a href="./StatistikTeknik/Pertemuan-6/Bab_06_Distribusi_Kontinu_dan_Teorema_Limit_Pusat.docx" class="btn btn-secondary">
+                📄 Unduh Modul Bab 6 (.docx)
+              </a>
+            </div>
+          </div>
+
+          <!-- Pertemuan 7 Active Card -->
+          <div class="card" style="--card-color: #f59e0b;">
+            <div class="card-meta">
+              <span class="card-number" style="color: #f59e0b;">PERTEMUAN 07</span>
+              <span class="card-cpmk" style="color: #f59e0b; border-color: #f59e0b44; background: #f59e0b18;">CPMK-4</span>
+            </div>
+            <h3 class="card-title">Estimasi Parameter & Interval Kepercayaan</h3>
+            <p class="card-desc">
+              Estimasi titik vs interval, sifat BLUE estimator ideal, CI 95% untuk rata-rata (Z vs t), CI proporsi ketersediaan SLA, dan kalkulasi ukuran sampel minimum.
+            </p>
+            <ul class="features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #f59e0b;"><polyline points="20 6 9 17 4 12"/></svg>
+                10 Slide Web Interaktif (Bolt Slides Engine)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #f59e0b;"><polyline points="20 6 9 17 4 12"/></svg>
+                Presenter Mode (P) & Anotasi Layar (A)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #f59e0b;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Amber & Sunset Gold
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./StatistikTeknik/Pertemuan-7/dist/" class="btn btn-primary" style="background: #f59e0b; color: #05070a; box-shadow: 0 4px 20px #f59e0b55;">
+                🚀 Buka Slide Presentasi
+              </a>
+              <a href="./StatistikTeknik/Pertemuan-7/Bab_07_Estimasi_Parameter_dan_Interval_Kepercayaan.docx" class="btn btn-secondary">
+                📄 Unduh Modul Bab 7 (.docx)
+              </a>
+            </div>
+          </div>
+
+          <!-- Pertemuan 8 Active Card -->
+          <div class="card" style="--card-color: #f43f5e;">
+            <div class="card-meta">
+              <span class="card-number" style="color: #f43f5e;">PERTEMUAN 08</span>
+              <span class="card-cpmk" style="color: #f43f5e; border-color: #f43f5e44; background: #f43f5e18;">CPMK-4</span>
+            </div>
+            <h3 class="card-title">Uji Hipotesis Satu & Dua Sampel</h3>
+            <p class="card-desc">
+              Kerangka formal H0 vs H1, taraf nyata α, dilema kesalahan Tipe I vs II, filosofi p-value, uji-t satu sampel SLA, two-sample t-test, dan paired t-test optimasi cache.
+            </p>
+            <ul class="features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #f43f5e;"><polyline points="20 6 9 17 4 12"/></svg>
+                10 Slide Web Interaktif (Bolt Slides Engine)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #f43f5e;"><polyline points="20 6 9 17 4 12"/></svg>
+                Presenter Mode (P) & Anotasi Layar (A)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #f43f5e;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Crimson Ruby & Rose
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./StatistikTeknik/Pertemuan-8/dist/" class="btn btn-primary" style="background: #f43f5e; color: #05070a; box-shadow: 0 4px 20px #f43f5e55;">
+                🚀 Buka Slide Presentasi
+              </a>
+              <a href="./StatistikTeknik/Pertemuan-8/Bab_08_Uji_Hipotesis_Satu_dan_Dua_Sampel.docx" class="btn btn-secondary">
+                📄 Unduh Modul Bab 8 (.docx)
+              </a>
+            </div>
+          </div>
+
+          <!-- Pertemuan 9 Active Card -->
+          <div class="card" style="--card-color: #fb923c;">
+            <div class="card-meta">
+              <span class="card-number" style="color: #fb923c;">PERTEMUAN 09</span>
+              <span class="card-cpmk" style="color: #fb923c; border-color: #fb923c44; background: #fb923c18;">CPMK-4</span>
+            </div>
+            <h3 class="card-title">ANOVA & Uji Non-Parametrik</h3>
+            <p class="card-desc">
+              Bahaya inflasi alpha pengujian berulang, dekomposisi varians F-test, uji asumsi Levene & Shapiro-Wilk, post-hoc Tukey HSD, serta uji Kruskal-Wallis & Wilcoxon.
+            </p>
+            <ul class="features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #fb923c;"><polyline points="20 6 9 17 4 12"/></svg>
+                10 Slide Web Interaktif (Bolt Slides Engine)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #fb923c;"><polyline points="20 6 9 17 4 12"/></svg>
+                Presenter Mode (P) & Anotasi Layar (A)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #fb923c;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Sunset Terracotta & Copper
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./StatistikTeknik/Pertemuan-9/dist/" class="btn btn-primary" style="background: #fb923c; color: #05070a; box-shadow: 0 4px 20px #fb923c55;">
+                🚀 Buka Slide Presentasi
+              </a>
+              <a href="./StatistikTeknik/Pertemuan-9/Bab_09_ANOVA_dan_Uji_Non_Parametrik.docx" class="btn btn-secondary">
+                📄 Unduh Modul Bab 9 (.docx)
+              </a>
+            </div>
+          </div>
+
+          <!-- Pertemuan 10 Active Card -->
+          <div class="card" style="--card-color: #8b5cf6;">
+            <div class="card-meta">
+              <span class="card-number" style="color: #8b5cf6;">PERTEMUAN 10</span>
+              <span class="card-cpmk" style="color: #8b5cf6; border-color: #8b5cf644; background: #8b5cf618;">CPMK-5</span>
+            </div>
+            <h3 class="card-title">Regresi Linear Sederhana & Berganda</h3>
+            <p class="card-desc">
+              Korelasi vs kausalitas, estimasi OLS lm(), interpretasi slope ceteris paribus, koefisien determinasi R² vs Adjusted R², multikolinearitas VIF, dan 4 plot diagnostik residual.
+            </p>
+            <ul class="features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #8b5cf6;"><polyline points="20 6 9 17 4 12"/></svg>
+                10 Slide Web Interaktif (Bolt Slides Engine)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #8b5cf6;"><polyline points="20 6 9 17 4 12"/></svg>
+                Presenter Mode (P) & Anotasi Layar (A)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #8b5cf6;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Deep Purple & Blue
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./StatistikTeknik/Pertemuan-10/dist/" class="btn btn-primary" style="background: #8b5cf6; color: #05070a; box-shadow: 0 4px 20px #8b5cf655;">
+                🚀 Buka Slide Presentasi
+              </a>
+              <a href="./StatistikTeknik/Pertemuan-10/Bab_10_Regresi_Linear_Sederhana_dan_Berganda.docx" class="btn btn-secondary">
+                📄 Unduh Modul Bab 10 (.docx)
+              </a>
+            </div>
+          </div>
+
+          <!-- Pertemuan 11 Active Card -->
+          <div class="card" style="--card-color: #14b8a6;">
+            <div class="card-meta">
+              <span class="card-number" style="color: #14b8a6;">PERTEMUAN 11</span>
+              <span class="card-cpmk" style="color: #14b8a6; border-color: #14b8a644; background: #14b8a618;">CPMK-5</span>
+            </div>
+            <h3 class="card-title">Regresi Logistik & Model Klasifikasi</h3>
+            <p class="card-desc">
+              Fungsi link logit sigmoid, estimasi MLE glm(family=binomial), kuantifikasi odds ratio exp(β), Confusion Matrix, presisi/recall/F1, dan evaluasi kurva ROC-AUC di R.
+            </p>
+            <ul class="features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #14b8a6;"><polyline points="20 6 9 17 4 12"/></svg>
+                10 Slide Web Interaktif (Bolt Slides Engine)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #14b8a6;"><polyline points="20 6 9 17 4 12"/></svg>
+                Presenter Mode (P) & Anotasi Layar (A)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #14b8a6;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Neon Teal & Seafoam
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./StatistikTeknik/Pertemuan-11/dist/" class="btn btn-primary" style="background: #14b8a6; color: #05070a; box-shadow: 0 4px 20px #14b8a655;">
+                🚀 Buka Slide Presentasi
+              </a>
+              <a href="./StatistikTeknik/Pertemuan-11/Bab_11_Regresi_Logistik_dan_Model_Lanjut.docx" class="btn btn-secondary">
+                📄 Unduh Modul Bab 11 (.docx)
+              </a>
+            </div>
+          </div>
+
+          <!-- Pertemuan 12 Active Card -->
+          <div class="card" style="--card-color: #d946ef;">
+            <div class="card-meta">
+              <span class="card-number" style="color: #d946ef;">PERTEMUAN 12</span>
+              <span class="card-cpmk" style="color: #d946ef; border-color: #d946ef44; background: #d946ef18;">CPMK-6</span>
+            </div>
+            <h3 class="card-title">Simulasi Monte Carlo</h3>
+            <p class="card-desc">
+              Pembangkitan bilangan acak Mersenne Twister, Hukum Bilangan Besar (LLN), laju konvergensi O(1/√N), inverse transform sampling, dan simulasi keandalan SLA klaster TI.
+            </p>
+            <ul class="features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #d946ef;"><polyline points="20 6 9 17 4 12"/></svg>
+                10 Slide Web Interaktif (Bolt Slides Engine)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #d946ef;"><polyline points="20 6 9 17 4 12"/></svg>
+                Presenter Mode (P) & Anotasi Layar (A)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #d946ef;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Vivid Magenta & Orchid
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./StatistikTeknik/Pertemuan-12/dist/" class="btn btn-primary" style="background: #d946ef; color: #05070a; box-shadow: 0 4px 20px #d946ef55;">
+                🚀 Buka Slide Presentasi
+              </a>
+              <a href="./StatistikTeknik/Pertemuan-12/Bab_12_Simulasi_Monte_Carlo.docx" class="btn btn-secondary">
+                📄 Unduh Modul Bab 12 (.docx)
+              </a>
+            </div>
+          </div>
+
+          <!-- Pertemuan 13 Active Card -->
+          <div class="card" style="--card-color: #06b6d4;">
+            <div class="card-meta">
+              <span class="card-number" style="color: #06b6d4;">PERTEMUAN 13</span>
+              <span class="card-cpmk" style="color: #06b6d4; border-color: #06b6d444; background: #06b6d418;">CPMK-6</span>
+            </div>
+            <h3 class="card-title">Bootstrap & Metode Resampling</h3>
+            <p class="card-desc">
+              Resampling dengan pengembalian (with replacement), plug-in principle Bradley Efron, bootstrap standard error tanpa rumus analitis, interval BCa, dan paket boot di R.
+            </p>
+            <ul class="features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #06b6d4;"><polyline points="20 6 9 17 4 12"/></svg>
+                10 Slide Web Interaktif (Bolt Slides Engine)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #06b6d4;"><polyline points="20 6 9 17 4 12"/></svg>
+                Presenter Mode (P) & Anotasi Layar (A)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #06b6d4;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Bright Sky Cyan & Mint
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./StatistikTeknik/Pertemuan-13/dist/" class="btn btn-primary" style="background: #06b6d4; color: #05070a; box-shadow: 0 4px 20px #06b6d455;">
+                🚀 Buka Slide Presentasi
+              </a>
+              <a href="./StatistikTeknik/Pertemuan-13/Bab_13_Bootstrap_dan_Metode_Resampling.docx" class="btn btn-secondary">
+                📄 Unduh Modul Bab 13 (.docx)
+              </a>
+            </div>
+          </div>
+
+          <!-- Pertemuan 14 Active Card -->
+          <div class="card" style="--card-color: #4fe5b0;">
+            <div class="card-meta">
+              <span class="card-number" style="color: #4fe5b0;">PERTEMUAN 14</span>
+              <span class="card-cpmk" style="color: #4fe5b0; border-color: #4fe5b044; background: #4fe5b018;">CPMK-7</span>
+            </div>
+            <h3 class="card-title">Analisis Multivariat & Pengantar ML Statistik</h3>
+            <p class="card-desc">
+              Kutukan dimensi tinggi, standarisasi variabel scale(), reduksi dimensi PCA (prcomp), nilai eigen > 1 Kaiser, biplot, K-Means clustering, metode elbow, dan Naive Bayes.
+            </p>
+            <ul class="features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #4fe5b0;"><polyline points="20 6 9 17 4 12"/></svg>
+                10 Slide Web Interaktif (Bolt Slides Engine)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #4fe5b0;"><polyline points="20 6 9 17 4 12"/></svg>
+                Presenter Mode (P) & Anotasi Layar (A)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #4fe5b0;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Ultra Dark AI Mint
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./StatistikTeknik/Pertemuan-14/dist/" class="btn btn-primary" style="background: #4fe5b0; color: #05070a; box-shadow: 0 4px 20px #4fe5b055;">
+                🚀 Buka Slide Presentasi
+              </a>
+              <a href="./StatistikTeknik/Pertemuan-14/Bab_14_Analisis_Multivariat_dan_Pengantar_ML_Statistik.docx" class="btn btn-secondary">
+                📄 Unduh Modul Bab 14 (.docx)
+              </a>
+            </div>
+          </div>
+
+          <!-- Pertemuan 15 Active Card -->
+          <div class="card" style="--card-color: #eab308;">
+            <div class="card-meta">
+              <span class="card-number" style="color: #eab308;">PERTEMUAN 15</span>
+              <span class="card-cpmk" style="color: #eab308; border-color: #eab30844; background: #eab30818;">CPMK-8</span>
+            </div>
+            <h3 class="card-title">Proyek Akhir Capstone: Analisis Komprehensif</h3>
+            <p class="card-desc">
+              Integrasi menyeluruh: perumusan masalah TI otentik, pipeline data wrangling, eksplorasi visual, inferensi statistik, dokumen reproducible R Markdown / Quarto, dan rubrik OBE 1-5.
+            </p>
+            <ul class="features-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #eab308;"><polyline points="20 6 9 17 4 12"/></svg>
+                10 Slide Web Interaktif (Bolt Slides Engine)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #eab308;"><polyline points="20 6 9 17 4 12"/></svg>
+                Presenter Mode (P) & Anotasi Layar (A)
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: #eab308;"><polyline points="20 6 9 17 4 12"/></svg>
+                Tema Visual: Golden Radiant Trophy
+              </li>
+            </ul>
+            <div class="btn-group">
+              <a href="./StatistikTeknik/Pertemuan-15/dist/" class="btn btn-primary" style="background: #eab308; color: #05070a; box-shadow: 0 4px 20px #eab30855;">
+                🚀 Buka Slide Presentasi
+              </a>
+              <a href="./StatistikTeknik/Pertemuan-15/Bab_15_Proyek_Akhir_Studi_Kasus_Analisis_Data_Komprehensif.docx" class="btn btn-secondary">
+                📄 Unduh Modul Bab 15 (.docx)
+              </a>
             </div>
           </div>
         </div>
@@ -404,7 +829,7 @@
 
   <footer>
     <p>
-      &copy; 2026 Andy Haryoko — Dosen Teknik Informatika. Dihosting di <a href="https://github.com/turnback2ubuntu-wq/Materi-Kuliah" target="_blank">GitHub Pages</a>.
+      &copy; 2026 Andy Haryoko — Program Studi Teknik Informatika UNIROW Tuban. Dihosting di <a href="https://github.com/turnback2ubuntu-wq/Materi-Kuliah" target="_blank">GitHub Pages</a>.
     </p>
   </footer>
 </body>

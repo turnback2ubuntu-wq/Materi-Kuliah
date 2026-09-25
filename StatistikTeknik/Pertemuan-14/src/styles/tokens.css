@@ -1,0 +1,50 @@
+/* THEME TOKENS — Bolt Slides */
+:root {
+  /* Surfaces */
+  --bg: #05070a;
+  --bg-grad-1: rgba(79, 229, 176, 0.16);
+  --bg-grad-2: rgba(52, 220, 216, 0.10);
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-2: rgba(255, 255, 255, 0.07);
+
+  /* Ink */
+  --fg: #f3f6fa;
+  --fg-muted: #94a3b8;
+  --fg-faint: #64748b;
+
+  /* Hairlines */
+  --hair: rgba(79, 229, 176, 0.18);
+  --hair-2: rgba(255, 255, 255, 0.06);
+
+  /* Primary Accent */
+  --primary: #4fe5b0;
+  --accent: linear-gradient(115deg, #c8f56e 0%, #5aeeb0 42%, #34dcd8 74%, #29c0f0 100%);
+  --accent-ink: #04140e;
+
+  /* Radius */
+  --radius: 20px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+
+  /* Depth */
+  --shadow: 0 50px 120px -50px rgba(0, 0, 0, 0.95);
+  --glow: 0 30px 80px -40px rgba(79, 229, 176, 0.50);
+
+  /* Type */
+  --font-head: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Motion */
+  --dur: 0.4s;
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Atmosphere */
+  --grain: 0.035;
+  --vignette: rgba(0, 0, 0, 0.22);
+
+  /* Responsive gutter */
+  --gutter: clamp(28px, 6vw, 120px);
+  --gutter-y: clamp(40px, 8vh, 96px);
+}
