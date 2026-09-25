@@ -1,7 +1,7 @@
 # 📚 Portal Materi Perkuliahan Informatika
 
-[![Deploy to GitHub Pages](https://github.com/turnback2ubuntu-wq/Materi-Kuliah/actions/workflows/deploy.yml/badge.svg)](https://github.com/turnback2ubuntu-wq/Materi-Kuliah/actions/workflows/deploy.yml)
 [![Live Portal](https://img.shields.io/badge/Live_Portal-GitHub_Pages-00f0ff?style=flat-square&logo=github)](https://turnback2ubuntu-wq.github.io/Materi-Kuliah/)
+[![Slide Pertemuan 1](https://img.shields.io/badge/Slide_Deck-Pertemuan_1-00f0ff?style=flat-square&logo=react)](https://turnback2ubuntu-wq.github.io/Materi-Kuliah/StatistikTeknik/Pertemuan-1/)
 [![Slide Pertemuan 2](https://img.shields.io/badge/Slide_Deck-Pertemuan_2-6366f1?style=flat-square&logo=react)](https://turnback2ubuntu-wq.github.io/Materi-Kuliah/StatistikTeknik/Pertemuan-2/)
 
 Koleksi materi perkuliahan, modul praktikum laboratorium, dan slide presentasi interaktif berbasis web (Vite + React) untuk mahasiswa Program Studi Teknik Informatika.
@@ -11,6 +11,7 @@ Koleksi materi perkuliahan, modul praktikum laboratorium, dan slide presentasi i
 ## 🌐 Akses Web & Live Demo
 
 - **Portal Utama**: [https://turnback2ubuntu-wq.github.io/Materi-Kuliah/](https://turnback2ubuntu-wq.github.io/Materi-Kuliah/)
+- **Slide Interaktif Pertemuan 1**: [https://turnback2ubuntu-wq.github.io/Materi-Kuliah/StatistikTeknik/Pertemuan-1/](https://turnback2ubuntu-wq.github.io/Materi-Kuliah/StatistikTeknik/Pertemuan-1/)
 - **Slide Interaktif Pertemuan 2**: [https://turnback2ubuntu-wq.github.io/Materi-Kuliah/StatistikTeknik/Pertemuan-2/](https://turnback2ubuntu-wq.github.io/Materi-Kuliah/StatistikTeknik/Pertemuan-2/)
 
 ---
